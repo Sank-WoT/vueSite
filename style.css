@@ -1,0 +1,10 @@
+body, html{
+    background-color: #272822;
+    font-family: 'Fira Code',monospace;
+    padding-top: .2rem;
+    font-size: 2vw;
+}
+
+.line {
+    height: 1.3rem;
+}

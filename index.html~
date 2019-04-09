@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My Site</title>
+    <div id="app"></div>
+    <link href="/style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="line" testString="sank"></div>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>

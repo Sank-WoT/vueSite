@@ -1,0 +1,5 @@
+body, html{
+    background-color: #272822;
+    font-size: 20px;
+    font-family: 'Fira Code',monospace;
+}

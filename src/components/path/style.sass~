@@ -1,0 +1,6 @@
+.path
+  font-size: 1rem
+  padding-right: 1rem
+
+:after
+  border: .6rem solid transparent

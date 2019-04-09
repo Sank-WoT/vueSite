@@ -1,0 +1,12 @@
+<template>
+  <span class="path">{{name}}</span>
+</template>
+
+<script>
+ import './style.sass'
+ 
+ export default {
+   name: 'path',
+   props: ['name']
+ }
+</script>

@@ -1,0 +1,19 @@
+<template>
+  <div id="time">
+    <h1 class="login">{{ time }}</h1>
+  </div>
+</template>
+
+<script>
+ import './style.sass'
+ export default {
+   name: 'loginTime',
+   data () {
+     return {
+       time: 'Time'
+     }
+   }
+ }
+</script>
+
+

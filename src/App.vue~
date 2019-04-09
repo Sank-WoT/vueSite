@@ -1,0 +1,23 @@
+<template>
+  <div>
+    <loginTime></loginTime>
+    <pathLine testString="sank"></pathLine>
+  </div>
+</template>
+
+<script>
+ import loginTime from './components/login/login-time.vue';
+ import pathLine from './components/path/path.vue';
+ export default {
+   components: {
+     loginTime, pathLine
+   },
+   name: 'app',
+   data () {
+     return {
+       msg: 'root'
+     }
+   }
+ }
+</script>
+</style>
