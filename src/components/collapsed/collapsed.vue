@@ -1,12 +1,11 @@
 <template>
-  <span class="path">{{name}}</span>
+  <span class="collapsed">‹…›</span>
 </template>
 
 <script>
  import './style.sass'
  
  export default {
-   name: 'path',
-   props: ['name']
+   name: 'collapsed',
  }
 </script>

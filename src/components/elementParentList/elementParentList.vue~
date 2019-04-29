@@ -1,0 +1,11 @@
+<template>
+  <span class="comment">//<space></space>{{title}}</span><collapsed></collapsed>
+</template>
+
+<script>
+ import './style.sass'
+ 
+ export default {
+   name: 'myConst',
+ }
+</script>

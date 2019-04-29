@@ -1,16 +1,41 @@
 <template>
   <div>
-    <loginTime></loginTime>
-    <pathLine testString="sank"></pathLine>
+    <div class="line">
+      <loginTime></loginTime>      
+    </div>
+
+    <div class="line" style="font-size: 0;">
+      <pathLine testString="~/sank"></pathLine>
+      <pathAdd testString="master"></pathAdd>
+      <pathEnd></pathEnd>
+    </div>
+    <div class="line"></div>
+    <menuMain v-bind:menuNameMain="['Profile', 'Skills', 'Projects']"></menuMain>
+    <div class="line">
+      <myConst></myConst><space></space><variable nameVariable="myName"></variable><space></space><keyword></keyword><string value="Aleksandr Serobabov"></string><semicolon></semicolon>
+    </div>
+    <div class="line">
+      <stringLine></stringLine>      
+    </div>
   </div>
 </template>
 
 <script>
  import loginTime from './components/login/login-time.vue';
  import pathLine from './components/path/path.vue';
+ import pathAdd from './components/pathAdd/path.vue';
+ import menuMain from './components/menu/menu.vue';
+ import pathEnd from './components/pathEnd/path.vue';
+ import myConst from './components/const/const.vue';
+ import space from './components/space/space.vue';
+ import variable from './components/variable/variable.vue';
+ import keyword from './components/keyword/keyword.vue';
+ import string from './components/string/string.vue';
+ import semicolon from './components/semicolon/semicolon.vue'
+ import stringLine from './components/stringLine/stringLine.vue'
  export default {
    components: {
-     loginTime, pathLine
+     loginTime, pathLine, pathAdd, menuMain, pathEnd, myConst, space, variable, keyword, string, semicolon, stringLine
    },
    name: 'app',
    data () {
