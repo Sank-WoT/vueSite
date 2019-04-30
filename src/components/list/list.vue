@@ -1,7 +1,9 @@
 <template>
   <span v-on:click="expend">
-    <div class="line"><elementParentList :title="title"></elementParentList></div>
-    <listLevel :title="title" textLevel2="wordpress"></listLevel>
+    <div class="line"><elementParentList :title="title"></elementParentList><collapsed></collapsed></div>
+    <div class="line"><listLevel :title="title" textLevel2="wordpress"></listLevel><collapsed></collapsed></div>
+    <div class="line"><listLevel :title="title" textLevel2="drupal"></listLevel><collapsed></collapsed></div>
+    <div class="line"><listLevel :title="title" textLevel2="react"></listLevel><collapsed></collapsed></div>
   </span>
 </template>
 

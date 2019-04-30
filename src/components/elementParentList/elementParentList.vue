@@ -1,6 +1,6 @@
 <template>
   <span>
-    <span class="comment">//<space></space>{{title}}</span><collapsed></collapsed>
+    <span class="comment">//<space></space>{{title}}</span>
   </span>
 </template>
 

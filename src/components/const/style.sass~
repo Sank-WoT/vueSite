@@ -1,8 +1,0 @@
-.line span 
-  position: relative;
-
-.path
-  font-size: 1rem
-  padding-right: 1rem;
-  background-color: #2e8ccf
-  display: inline-block;

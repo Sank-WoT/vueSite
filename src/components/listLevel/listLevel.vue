@@ -1,6 +1,6 @@
 <template>
   <span>
-    <elementParentList :title="title"></elementParentList><space></space><span class="comment">/</span><space></space><span class="comment">{{textLevel2}}</span><collapsed></collapsed>
+    <elementParentList :title="title"></elementParentList><space></space><span class="comment">/</span><space></space><span class="comment">{{textLevel2}}</span>
   </span>
 </template>
 

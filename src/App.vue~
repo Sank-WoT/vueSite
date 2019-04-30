@@ -11,11 +11,24 @@
     </div>
     <div class="line"></div>
     <menuMain v-bind:menuNameMain="['Profile', 'Skills', 'Projects']"></menuMain>
-    <div class="line">
-      <myConst></myConst><space></space><variable nameVariable="myName"></variable><space></space><keyword></keyword><string value="Aleksandr Serobabov"></string><semicolon></semicolon>
+    
+    <div class="line" v-for="item in stringLine">
+      <stringLine :nameVariable="item.nameVariable" :value="item.value"></stringLine>
     </div>
-    <div class="line">
-      <stringLine></stringLine>      
+
+    <div class="line"></div>
+    
+    <div class="line" v-for="item in linkLine">
+      <linkLine :nameVariable="item.nameVariable" :href="item.href" :text="item.text"></linkLine>
+    </div>
+
+    <div class="line"></div>
+    <div class="skillset collapsed">
+	<list title="Frontend"></list>
+    </div>
+    
+    <div class="line" v-for="item in skillLine">
+      <skill :name="item.name" :level="item.level" :nameFull="item.nameFull"></skill>
     </div>
   </div>
 </template>
@@ -26,21 +39,63 @@
  import pathAdd from './components/pathAdd/path.vue';
  import menuMain from './components/menu/menu.vue';
  import pathEnd from './components/pathEnd/path.vue';
- import myConst from './components/const/const.vue';
  import space from './components/space/space.vue';
- import variable from './components/variable/variable.vue';
- import keyword from './components/keyword/keyword.vue';
- import string from './components/string/string.vue';
- import semicolon from './components/semicolon/semicolon.vue'
  import stringLine from './components/stringLine/stringLine.vue'
+ import linkLine from './components/linkLine/linkLine.vue';
+ import list from './components/list/list.vue';
+ import skill from './components/skill/skill.vue';
+ import './style.sass'
  export default {
    components: {
-     loginTime, pathLine, pathAdd, menuMain, pathEnd, myConst, space, variable, keyword, string, semicolon, stringLine
+     loginTime, pathLine, pathAdd, menuMain, pathEnd, space, stringLine, linkLine, list, skill
    },
    name: 'app',
    data () {
      return {
-       msg: 'root'
+       msg: 'root',
+       stringLine: [{
+	 id: 1,
+	 nameVariable: "myName",
+	 value: "Aleksandr Serobabov",
+       },
+		    {
+		      id: 2,
+		      nameVariable: "profession",
+		      value: "I speak Code",
+		    },
+		    {
+		      id: 3,
+		      nameVariable: "email",
+		      value: "aserobabow95@mail.ru",
+		    }],
+
+       linkLine: [{
+	 id: 1,
+	 nameVariable: "github",
+	 href: "https://github.com/Sank-WoT",
+	 text: "https://github.com/Sank-WoT",
+       },
+		  {
+		    id: 2,
+		    nameVariable: "vk",
+		    href: "https://vk.com/sank_revenge",
+		    text: "https://vk.com/sank_revenge"
+		  }
+       ],
+
+       skillLine: [{
+	 id: 1,
+	 name: "js",
+	 level: "0.8",
+	 nameFull: "'JS'",
+       },
+	{
+	  id: 2,
+	  name: "css",
+	  level: "0.7",
+	  nameFull: "'CSS3'"
+	}
+       ],
      }
    }
  }

@@ -5,12 +5,6 @@
 </template>
 
 <script>
-
- export default {
-   name: 'listLevel',
- }
- 
-<script>
  import './style.sass'
  import space from '../space/space.vue';
  import collapsed from '../collapsed/collapsed.vue';
@@ -19,7 +13,7 @@
    props: ['title', 'textLevel2'],
    name: 'listLevel',
    components: {
-     space, collapsed, elementParentList;
+     space, collapsed, elementParentList
    }
  }
 </script>

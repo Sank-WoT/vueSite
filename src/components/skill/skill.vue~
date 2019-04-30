@@ -1,0 +1,27 @@
+<template>
+  <span>
+    <myConst></myConst><space></space><variable :nameVariable="name"></variable><space v-for="n in offset"></space><keyword></keyword><space></space><variable nameVariable="{"></variable><space></space><variable nameVariable="level:"></variable><space></space><variable class="number progress" :nameVariable="level" style="--value: 0.8;"></variable><space></space><variable nameVariable=","></variable><space></space><variable nameVariable="name:"></variable><string :value="nameFull"></string><space></space><variable nameVariable="}"></variable>
+  </span>
+</template>
+
+<script>
+ import './style.sass'
+ import space from '../space/space.vue';
+ import string from '../string/string.vue';
+ import variable from '../variable/variable.vue';
+ import myConst from '../const/const.vue';
+ import semicolon from '../semicolon/semicolon.vue';
+ import keyword from '../keyword/keyword.vue';
+ export default {
+   name: 'skill',
+   props: ['name', 'level', 'nameFull'],
+   components: {
+     space, string, variable, myConst, semicolon, keyword
+   },
+   computed: {
+     offset: function() {
+       return 20 - this.name.length;
+     }
+   }
+ }
+</script>

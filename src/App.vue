@@ -10,31 +10,25 @@
       <pathEnd></pathEnd>
     </div>
     <div class="line"></div>
-    <menuMain v-bind:menuNameMain="['Profile', 'Skills', 'Projects']"></menuMain>
-    <div class="line">
-      <stringLine nameVariable="myName" value="Aleksandr Serobabov"></stringLine>
-    </div>
-    <div class="line">
-      <stringLine nameVariable="profession" value="I speak Code"></stringLine>
-    </div>
-    <div class="line">
-      <stringLine nameVariable="email" value="aserobabow95@mail.ru"></stringLine> 
+    <menuMain :menuNameMain="['Profile', 'Skills', 'Projects']" :index=0></menuMain>
+    
+    <div class="line" v-for="item in stringLine">
+      <stringLine :nameVariable="item.nameVariable" :value="item.value"></stringLine>
     </div>
 
     <div class="line"></div>
     
-    <div class="line">
-      <linkLine nameVariable="github" href="https://github.com/Sank-WoT" text="https://github.com/Sank-WoT"></linkLine>
-    </div>
-    <div class="line">
-      <linkLine nameVariable="vk" href="https://vk.com/sank_revenge" text="https://vk.com/sank_revenge"></linkLine>
+    <div class="line" v-for="item in linkLine">
+      <linkLine :nameVariable="item.nameVariable" :href="item.href" :text="item.text"></linkLine>
     </div>
 
     <div class="line"></div>
     <div class="skillset collapsed">
-      <div class="line">
 	<list title="Frontend"></list>
-      </div>      
+    </div>
+    
+    <div class="line" v-for="item in skillLine">
+      <skill :name="item.name" :level="item.level" :nameFull="item.nameFull"></skill>
     </div>
   </div>
 </template>
@@ -49,15 +43,59 @@
  import stringLine from './components/stringLine/stringLine.vue'
  import linkLine from './components/linkLine/linkLine.vue';
  import list from './components/list/list.vue';
+ import skill from './components/skill/skill.vue';
  import './style.sass'
  export default {
    components: {
-     loginTime, pathLine, pathAdd, menuMain, pathEnd, space, stringLine, linkLine, list
+     loginTime, pathLine, pathAdd, menuMain, pathEnd, space, stringLine, linkLine, list, skill
    },
    name: 'app',
    data () {
      return {
-       msg: 'root'
+       msg: 'root',
+       stringLine: [{
+	 id: 1,
+	 nameVariable: "myName",
+	 value: "Aleksandr Serobabov",
+       },
+		    {
+		      id: 2,
+		      nameVariable: "profession",
+		      value: "I speak Code",
+		    },
+		    {
+		      id: 3,
+		      nameVariable: "email",
+		      value: "aserobabow95@mail.ru",
+		    }],
+
+       linkLine: [{
+	 id: 1,
+	 nameVariable: "github",
+	 href: "https://github.com/Sank-WoT",
+	 text: "https://github.com/Sank-WoT",
+       },
+		  {
+		    id: 2,
+		    nameVariable: "vk",
+		    href: "https://vk.com/sank_revenge",
+		    text: "https://vk.com/sank_revenge"
+		  }
+       ],
+
+       skillLine: [{
+	 id: 1,
+	 name: "js",
+	 level: "0.8",
+	 nameFull: "'JS'",
+       },
+	{
+	  id: 2,
+	  name: "css",
+	  level: "0.7",
+	  nameFull: "'CSS3'"
+	}
+       ],
      }
    }
  }

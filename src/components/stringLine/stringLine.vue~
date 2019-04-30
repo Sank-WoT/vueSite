@@ -1,6 +1,6 @@
 <template>
   <span>
-    <myConst></myConst><space></space><variable nameVariable=nameVariable></variable><space></space><keyword></keyword><string value=value></string><semicolon></semicolon>
+    <myConst></myConst><space></space><variable :nameVariable="nameVariable"></variable><space></space><keyword></keyword><string :value="value"></string><semicolon></semicolon>
   </span>
 </template>
 
@@ -15,7 +15,7 @@
  export default {
    props: ['value', 'nameVariable'],
    components: {
-     space, string, variable, myConst, semicolonm, keyword
+     space, string, variable, myConst, semicolon, keyword
    },
    name: 'stringLine',
  }

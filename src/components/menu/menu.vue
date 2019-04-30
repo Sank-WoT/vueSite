@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @mouseover="mouseover = true" @mouseleave="mouseover = false">
     <div class="line">
       <span class="comment">/</span>
       <span class="comment">{{head}}</span> 
@@ -8,11 +8,8 @@
     <div class="line">
       <span class="comment">*</span>
       <span class="white-space space"></span>
-      <span class="comment comment_active">{{menuNameMain[0]}}</span>
-      <span v-for="item in menuNameMain">
-	<span class="comment comment_active">{{ item.trim() }}</span>
-	<span class="white-space space"></span>
-      </span>
+      <span v-if="!mouseover"><span class="comment comment_active">{{ menuNameMain[index].trim() }}</span><span class="white-space space"></span></span>
+      <span v-else><span v-for="item in menuNameMain"><span class="comment comment_active">{{ item.trim() }}</span><span class="white-space space"></span></span></span><span class="comment">*</span>
     </div>
     <div class="line">
       <span class="comment">{{head}}</span> 
@@ -26,15 +23,19 @@
  import './style.sass'
  export default {
    name: 'menu',
-   props: ['menuNameMain'],
+   props: ['menuNameMain', 'index'],
+   data: function() {
+     return {
+       mouseover: false,
+     }
+   },
    computed: {
      head: function() {
        var numberChar = 0;
-       this.menuNameMain.forEach(function(el) {numberChar += el.length + 1});
-       console.log(numberChar);
-       return '*'.repeat(numberChar);
+       this.menuNameMain.forEach(function(el) {numberChar += el.length + 2});
+       return '*'.repeat(numberChar - 1);
      }
-   }
+   },
  }
 </script>
 
